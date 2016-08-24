@@ -1,12 +1,3 @@
-from __future__ import unicode_literals
-from __future__ import print_function
-from __future__ import division
-from __future__ import absolute_import
-from future.builtins import super
-from future.builtins import input
-from future.builtins import open
-from future import standard_library
-standard_library.install_aliases()
 import os
 import subprocess
 
@@ -27,7 +18,7 @@ class InitProjectConfig(ConfigManager):
 
     def __init__(self, **kwargs):
         self._has_ini_file = not os.path.exists('boilerplate.ini')
-        super(InitProjectConfig, self).__init__('options', **kwargs)
+        super().__init__('options', **kwargs)
 
     def run(self):
         require = self.require

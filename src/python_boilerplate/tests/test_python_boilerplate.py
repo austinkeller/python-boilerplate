@@ -1,12 +1,5 @@
-from __future__ import unicode_literals
-from __future__ import print_function
-from __future__ import division
-from __future__ import absolute_import
-from future.builtins import open
-from future import standard_library
-standard_library.install_aliases()
 import os
-from python_boilerplate.tests.tempfile_backport import TemporaryDirectory
+import tempfile
 from collections import OrderedDict
 
 import mock
@@ -21,8 +14,8 @@ from python_boilerplate.utils import visit_dir
 
 @pytest.yield_fixture
 def tempdir():
-    tempdir = TemporaryDirectory()
-    oldpath = os.getcwdu()
+    tempdir = tempfile.TemporaryDirectory()
+    oldpath = os.getcwd()
     with tempdir as path:
         os.chdir(path)
         try:
@@ -34,8 +27,7 @@ def tempdir():
 
 @pytest.yield_fixture(scope='session')
 def jobdir():
-    for temp_file in tempdir():
-        yield temp_file
+    yield from tempdir()
 
 
 @pytest.yield_fixture
@@ -148,7 +140,7 @@ def test_files_were_created(job, jobdir):
             'README.rst',
             'VERSION',
         }
-        assert set(os.listdir(os.getcwdu())) == default_files
+        assert set(os.listdir(os.getcwd())) == default_files
 
 
 def test_creted_file_contents(job, jobdir):
