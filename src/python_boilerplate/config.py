@@ -1,7 +1,17 @@
+from __future__ import unicode_literals
+from __future__ import print_function
+from __future__ import division
+from __future__ import absolute_import
+from future.builtins import super
+from future.builtins import open
+from future import standard_library
+
+standard_library.install_aliases()
 import codecs
 import configparser
 import hashlib
 import os
+
 GLOBAL_CONFIG = None
 
 
@@ -15,7 +25,7 @@ class BoilerplateConfig(configparser.ConfigParser):
     ]
 
     def __init__(self, *args, **kwds):
-        super().__init__(*args, **kwds)
+        super(BoilerplateConfig, self).__init__(*args, **kwds)
         self.optionxform = str
 
         if os.path.exists('boilerplate.ini'):

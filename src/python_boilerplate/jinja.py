@@ -1,3 +1,11 @@
+from __future__ import print_function
+from __future__ import unicode_literals
+from __future__ import division
+from __future__ import absolute_import
+from builtins import open
+from future import standard_library
+
+standard_library.install_aliases()
 import codecs
 import hashlib
 import os
@@ -10,7 +18,7 @@ basedir = os.path.join(os.path.dirname(__file__), 'templates')
 jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(basedir))
 
 
-def write_template(template: str, namespace=None, ignore=False, path=None,
+def write_template(template, namespace=None, ignore=False, path=None,
                    verbose=True, hash=None):
     """
     Render jinja template with the given namespace and saves it in the

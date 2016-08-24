@@ -49,7 +49,9 @@ setup(
     install_requires=[
         'jinja2',
         'invoke',
-        'unidecode'
+        'unidecode',
+		'future',
+        'configparser'
     ],
     extras_require={
         'testing': [

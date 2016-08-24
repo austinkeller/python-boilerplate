@@ -1,3 +1,12 @@
+from __future__ import unicode_literals
+from __future__ import print_function
+from __future__ import division
+from __future__ import absolute_import
+from builtins import dict
+from builtins import input
+from future import standard_library
+standard_library.install_aliases()
+from builtins import object
 import os
 import datetime
 
@@ -7,7 +16,7 @@ from python_boilerplate.config import get_config, get_context, save_config, \
 from python_boilerplate.jinja import write_template
 
 
-class ConfigManager:
+class ConfigManager(object):
     """
     Manage configurations for a FileWriter object.
 
@@ -77,7 +86,7 @@ class ConfigManager:
         return {}
 
 
-class FileWriter:
+class FileWriter(object):
     """
     A task that writes files in the disk.
 
@@ -93,7 +102,7 @@ class FileWriter:
     pyname = property(lambda _: get_config().get('options', 'pyname'))
 
     def __init__(self, config, context=None):
-        self.basepath = os.getcwd()
+        self.basepath = os.getcwdu()
         self.config = config
         self.context = dict(context or {})
 
@@ -120,7 +129,7 @@ class FileWriter:
         If ignore is true, ignore file if it already exist.
         """
 
-        base = os.getcwd()
+        base = os.getcwdu()
         file = os.path.join(base, path or template)
         file = file[len(self.basepath) + 1:]
 
@@ -140,7 +149,7 @@ def prepare_path(path):
     """
 
     dirs = path.rpartition(os.path.sep)[0].split(os.path.sep)
-    base = os.getcwd()
+    base = os.getcwdu()
     for dir in dirs:
         base = os.path.join(base, dir)
         if not os.path.exists(base):
