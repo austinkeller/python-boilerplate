@@ -1,8 +1,2 @@
-from __future__ import unicode_literals
-from __future__ import print_function
-from __future__ import division
-from __future__ import absolute_import
-from future import standard_library
-standard_library.install_aliases()
 __version__ = '0.3.1'
-__author__ = 'Fábio Macêdo Mendes'
+__author__ = 'F\xc3\xa1bio Mac\xc3\xaado Mendes'
