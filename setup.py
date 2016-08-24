@@ -29,7 +29,7 @@ setup(
     version=version,
     author=author,
     author_email='fabiomacedomendes@gmail.com',
-    url='https://github.com/fabiommendes/boilerplate',
+    url='https://github.com/fabiommendes/python-boilerplate',
     description='Creates the skeleton of your Python project.',
     long_description=open('README.rst').read(),
 
