@@ -2,7 +2,7 @@ Metadata-Version: 1.1
 Name: python-boilerplate
 Version: 0.2.4
 Summary: Creates the skeleton of your Python project.
-Home-page: https://github.com/fabiommendes/boilerplate
+Home-page: https://github.com/fabiommendes/python-boilerplate
 Author: Fábio Macêdo Mendes
 Author-email: fabiomacedomendes@gmail.com
 License: UNKNOWN
