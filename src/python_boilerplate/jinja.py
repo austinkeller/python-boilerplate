@@ -51,6 +51,10 @@ def write_template(template: str, namespace=None, ignore=False, path=None,
     if verbose:
         print('    creating %s...' % os.path.abspath(path))
 
+    directory = os.path.dirname(os.path.abspath(path))
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+
     with open(path, 'w') as F:
         F.write(data)
 
