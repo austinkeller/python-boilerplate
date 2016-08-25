@@ -1,3 +1,0 @@
-[console_scripts]
-python-boilerplate = python_boilerplate.__main__:main
-

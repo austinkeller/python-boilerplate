@@ -1,9 +1,0 @@
-jinja2
-invoke
-unidecode
-future
-configparser
-
-[testing]
-pytest
-mock
